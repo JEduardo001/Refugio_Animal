@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "517143541019",
+    "project_id": "refugio-animal-92181",
+    "storage_bucket": "refugio-animal-92181.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517143541019:android:f98b260c13f5f752398fbe",
+        "android_client_info": {
+          "package_name": "com.example.refugio_animales"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIzdr8dHK95xe6gaZpFSONzfdxnzhxQGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
