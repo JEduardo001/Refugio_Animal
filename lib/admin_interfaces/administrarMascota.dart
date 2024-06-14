@@ -59,8 +59,9 @@ class _administrarMascotaState extends State<administrarMascota> {
   bool selectValorSignosMaltrato = false;
   bool selectValorVacunaRabia= false;
   bool selectValorVacunaLeptospirosis= false;
-
- 
+  bool selectValorVacunaCoronavirus= false;
+  bool selectValorVacunaPeritonitis= false;
+  bool selectValorVacunaCalcivirus= false;
 
   _administrarMascotaState(
     {
@@ -162,6 +163,8 @@ class _administrarMascotaState extends State<administrarMascota> {
               const SizedBox(height: 10,),
               const Text("Modifica sus datos",style: TextStyle(color: Color.fromARGB(255, 0, 0, 0),fontSize: 20)),
               const SizedBox(height: 10,),
+              const Text('Nombre tutor:',style: TextStyle(fontSize: 17),),
+              const SizedBox(height: 10),
               TextField(
                 controller:  nombreMascotaC,
                 enableInteractiveSelection: false,
@@ -175,13 +178,10 @@ class _administrarMascotaState extends State<administrarMascota> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0)
                   )
-                ),
-                /*onSubmitted: (valor){
-                  nombreMascota = valor;
-                  print('El nombre es $nombreMascota');
-                }*/
+                ),             
               ),
-                
+              const SizedBox(height: 10,),
+              const Text('Raza:',style: TextStyle(fontSize: 17),),
               const Divider(
                 height: 18.0,
               ),
@@ -203,17 +203,16 @@ class _administrarMascotaState extends State<administrarMascota> {
                   
                 }
               ),
+              const SizedBox(height: 10,),
+              const Text('Edad:',style: TextStyle(fontSize: 17),),
               const Divider(
                 height: 18.0,
               ),
               TextField(
-                keyboardType: TextInputType.number,
                 controller:  edadMascotaC,
                 enableInteractiveSelection: false,
                 textCapitalization: TextCapitalization.characters,
-                inputFormatters: <TextInputFormatter>[
-                  FilteringTextInputFormatter.digitsOnly
-                ],
+               
                 decoration: InputDecoration(
                   hintText: 'Edad',
                   labelText: edad,
@@ -362,6 +361,9 @@ class _administrarMascotaState extends State<administrarMascota> {
       'signosMaltrato': selectValorSignosMaltrato,
       'vacunaRabia': selectValorVacunaRabia,
       'vacunaLeptospirosis': selectValorVacunaLeptospirosis,
+      'vacunaCoronavirus': selectValorVacunaCoronavirus,
+      'vacunaPeritonitis': selectValorVacunaPeritonitis,
+      'vacunaCalcivirus': selectValorVacunaCalcivirus,
     };
 
     final response = await http.post(
@@ -458,7 +460,73 @@ class _administrarMascotaState extends State<administrarMascota> {
           },
 
           hint:const  Text('Asigna un valor'),
-        )
+        ),
+        const Text('Vacuna contra Coronavirus',style: TextStyle(fontSize: 18),),
+          const SizedBox(height: 10,),
+          DropdownButton<bool>(
+            value: selectValorVacunaCoronavirus,
+            items: const [
+              DropdownMenuItem(
+                value: true,
+                child: Text('Puesta'),
+              ),
+              DropdownMenuItem(
+                value: false,
+                child: Text('Pendiente'),
+              ),
+            ],
+            onChanged: (bool? newValue) {
+              setState(() {
+                selectValorVacunaCoronavirus = newValue!;
+              });
+            },
+
+            hint:const  Text('Asigna un valor'),
+          ),
+          const Text('Vacuna contra Peritonitis',style: TextStyle(fontSize: 18),),
+          const SizedBox(height: 10,),
+          DropdownButton<bool>(
+            value: selectValorVacunaPeritonitis,
+            items: const [
+              DropdownMenuItem(
+                value: true,
+                child: Text('Puesta'),
+              ),
+              DropdownMenuItem(
+                value: false,
+                child: Text('Pendiente'),
+              ),
+            ],
+            onChanged: (bool? newValue) {
+              setState(() {
+                selectValorVacunaPeritonitis = newValue!;
+              });
+            },
+
+            hint:const  Text('Asigna un valor'),
+          ),
+          const Text('Vacuna contra Calcivirus',style: TextStyle(fontSize: 18),),
+          const SizedBox(height: 10,),
+          DropdownButton<bool>(
+            value: selectValorVacunaCalcivirus,
+            items: const [
+              DropdownMenuItem(
+                value: true,
+                child: Text('Puesta'),
+              ),
+              DropdownMenuItem(
+                value: false,
+                child: Text('Pendiente'),
+              ),
+            ],
+            onChanged: (bool? newValue) {
+              setState(() {
+                selectValorVacunaCalcivirus = newValue!;
+              });
+            },
+
+            hint:const  Text('Asigna un valor'),
+          ),
       ],
     );  
   }

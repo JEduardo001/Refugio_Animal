@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:refugio_animales/admin_interfaces/widgets/setWidgetDatosRescates.dart';
@@ -64,14 +65,22 @@ class _verRescatesState extends State<verRescates> {
           ),
     );
   }
+  
+
+  
+
   Widget setAviso() {
     return const Text('No hay Rescates');
   }
+
+
+ 
+
+  
 }
 
 
 Future<List<Map<String,dynamic>>> traerDatos() async{
-  //especificamos el endpoint de la api
   final response = await http.get(Uri.parse('https://api-refugio-animal.onrender.com/getRescates'));
   if (response.statusCode == 200) {
    

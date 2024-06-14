@@ -30,6 +30,12 @@ class _AgregarMascotaState extends State<AgregarMascota> {
   bool selectValorSignosMaltrato = false;
   bool selectValorVacunaRabia= false;
   bool selectValorVacunaLeptospirosis= false;
+  bool selectValorVacunaCoronavirus= false;
+  bool selectValorVacunaPeritonitis= false;
+  bool selectValorVacunaCalcivirus= false;
+
+
+
 
 
   File? image;
@@ -241,9 +247,10 @@ class _AgregarMascotaState extends State<AgregarMascota> {
         'signosMaltrato': selectValorSignosMaltrato,
         'vacunaRabia': selectValorVacunaRabia,
         'vacunaLeptospirosis': selectValorVacunaLeptospirosis,
-
-
-        
+        'vacunaCoronavirus': selectValorVacunaCoronavirus,
+        'vacunaPeritonitis': selectValorVacunaPeritonitis,
+        'vacunaCalcivirus': selectValorVacunaCalcivirus,
+   
       };
 
       final response = await http.post(
@@ -348,13 +355,10 @@ class _AgregarMascotaState extends State<AgregarMascota> {
                   height: 18.0,
                 ),
                 TextField(
-                  keyboardType: TextInputType.number,
                   controller:  edadMascotaC,
                   enableInteractiveSelection: false,
                   textCapitalization: TextCapitalization.none,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly
-                  ],
+                  
                   decoration: InputDecoration(
                     hintText: 'Edad',
                     labelText: 'Edad',
@@ -508,7 +512,74 @@ class _AgregarMascotaState extends State<AgregarMascota> {
             },
 
             hint:const  Text('Asigna un valor'),
-          )
+          ),
+          const Text('Vacuna contra Coronavirus',style: TextStyle(fontSize: 18),),
+          const SizedBox(height: 10,),
+          DropdownButton<bool>(
+            value: selectValorVacunaCoronavirus,
+            items: const [
+              DropdownMenuItem(
+                value: true,
+                child: Text('Puesta'),
+              ),
+              DropdownMenuItem(
+                value: false,
+                child: Text('Pendiente'),
+              ),
+            ],
+            onChanged: (bool? newValue) {
+              setState(() {
+                selectValorVacunaCoronavirus = newValue!;
+              });
+            },
+
+            hint:const  Text('Asigna un valor'),
+          ),
+          const Text('Vacuna contra Peritonitis',style: TextStyle(fontSize: 18),),
+          const SizedBox(height: 10,),
+          DropdownButton<bool>(
+            value: selectValorVacunaPeritonitis,
+            items: const [
+              DropdownMenuItem(
+                value: true,
+                child: Text('Puesta'),
+              ),
+              DropdownMenuItem(
+                value: false,
+                child: Text('Pendiente'),
+              ),
+            ],
+            onChanged: (bool? newValue) {
+              setState(() {
+                selectValorVacunaPeritonitis = newValue!;
+              });
+            },
+
+            hint:const  Text('Asigna un valor'),
+          ),
+          const Text('Vacuna contra Calcivirus',style: TextStyle(fontSize: 18),),
+          const SizedBox(height: 10,),
+          DropdownButton<bool>(
+            value: selectValorVacunaCalcivirus,
+            items: const [
+              DropdownMenuItem(
+                value: true,
+                child: Text('Puesta'),
+              ),
+              DropdownMenuItem(
+                value: false,
+                child: Text('Pendiente'),
+              ),
+            ],
+            onChanged: (bool? newValue) {
+              setState(() {
+                selectValorVacunaCalcivirus = newValue!;
+              });
+            },
+
+            hint:const  Text('Asigna un valor'),
+          ),
+          
         ],
       );
     

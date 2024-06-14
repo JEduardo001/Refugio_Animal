@@ -26,7 +26,9 @@ class setWidgetDatosAdopcion extends StatelessWidget {
     required this.fechaIngreso,
     required this.id,
     required this.tipoMascota,
-    required this.ubicacion
+    required this.ubicacion,
+
+
 
 
   });
@@ -109,10 +111,10 @@ class setWidgetDatosAdopcion extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: const Color.fromARGB(255, 0, 0, 0), backgroundColor:const Color.fromARGB(255, 238, 170, 255), shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0), // Ajusta el valor para cambiar la redondez de los bordes
+                      borderRadius: BorderRadius.circular(20.0), 
                     ),
-                    minimumSize: const Size(10.0, 30.0), // Tamaño mínimo del botón
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0), // Color del texto del botón
+                    minimumSize: const Size(10.0, 30.0), 
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   ),
                   child:  Text('Rescatar a $nombre'),
 

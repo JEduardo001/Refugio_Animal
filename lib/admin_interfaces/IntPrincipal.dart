@@ -159,7 +159,7 @@ class _IntPrincipalState extends State<IntPrincipal> {
                           borderRadius: BorderRadius.circular(10.0), 
                         ),
                         child: const Text(
-                          'Crear Admin',
+                          'Crear usuario administrador',
                           style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                         ),
                       ),
@@ -258,7 +258,9 @@ class _IntPrincipalState extends State<IntPrincipal> {
                             : const Text(''),
                           
                           for (var i in datos)
+                          
                             setPubliaciones(i)
+                            
                            
 
                         ],

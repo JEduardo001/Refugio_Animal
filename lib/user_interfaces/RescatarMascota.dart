@@ -120,8 +120,8 @@ class _RescatarMascotaState extends State<RescatarMascota> {
               enableInteractiveSelection: false,
               textCapitalization: TextCapitalization.characters,
               decoration: InputDecoration(
-                hintText: 'Direccion',
-                labelText: 'Direccion',
+                hintText: 'Dirección',
+                labelText: 'Dirección',
                 suffixIcon: const  Icon(
                   Icons.verified_user
                 ),
@@ -145,8 +145,8 @@ class _RescatarMascotaState extends State<RescatarMascota> {
                 FilteringTextInputFormatter.digitsOnly
               ],
               decoration: InputDecoration(
-                hintText: 'Telefono',
-                labelText: 'Telefono',
+                hintText: 'Teléfono',
+                labelText: 'Teléfono',
                 suffixIcon: const  Icon(
                   Icons.verified_user
                 ),
@@ -180,7 +180,7 @@ class _RescatarMascotaState extends State<RescatarMascota> {
               }
             ),
             ElevatedButton(
-              onPressed: subirRescateMascota,
+              onPressed: accionesRescatarMascota,
               child:  Text('Rescatar a $nombre', style: TextStyle(color: Color.fromARGB(255, 158, 53, 174)),),
             ),
               
@@ -220,7 +220,7 @@ class _RescatarMascotaState extends State<RescatarMascota> {
 
       // Leer la respuesta como JSON
       if (response.statusCode == 200) {
-        _showAlertDialog(context,'HAZ RESCATADO A $nombre !! Pasa por $nombre al refugio a de 10:00 AM a 6 PM');
+        _showAlertDialog(context,'Haz rescatado a $nombre. Pasa por $nombre al refugio de 10:00 AM a 6:00 PM');
 
         print('Respuesta de la API: ${response.body}');
       } else {
@@ -252,4 +252,36 @@ class _RescatarMascotaState extends State<RescatarMascota> {
   }
   
   
+
+  void accionesRescatarMascota() {
+    subirRescateMascota();
+    desactivarMascota();
+  }
+
+  desactivarMascota()async {
+    const String apiUrl = 'https://api-refugio-animal.onrender.com';
+    
+    const String endpoint = '/DesactivarMascota';
+
+    final Map<String, dynamic> requestBody = {
+      'tipoMascota': tipoMascota,
+      'ubicacion': ubicacion,
+      'id': id,
+      'valor': true 
+    };
+
+    final response = await http.post(
+      Uri.parse('$apiUrl$endpoint'),
+      headers: {'Content-Type': 'application/json'}, // Especifica el tipo de contenido como JSON
+      body: jsonEncode(requestBody), // Codifica los parámetros como JSON
+    );
+    print(jsonEncode(requestBody));
+
+    if (response.statusCode == 200) {
+
+      print('Respuesta de la API: ${response.body}');
+    } else {
+      print('Error al desactivar la mascota: ${response.reasonPhrase}');
+    }
+  }
 }

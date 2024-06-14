@@ -123,7 +123,7 @@ class _loginState extends State<login> {
           ),
           ElevatedButton(
               onPressed: iniciarSesion,
-              child: const Text('Iniciar Sesion', style: TextStyle(color: Color.fromARGB(255, 158, 53, 174)),),
+              child: const Text('Iniciar Sesión', style: TextStyle(color: Color.fromARGB(255, 158, 53, 174)),),
           ),
           
          

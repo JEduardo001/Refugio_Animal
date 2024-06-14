@@ -50,8 +50,8 @@ class _crearCuentaState extends State<crearCuenta> {
                     enableInteractiveSelection: false,
                     textCapitalization: TextCapitalization.none,
                     decoration: InputDecoration(
-                      hintText: 'Nombre',
-                      labelText: 'Nombre',
+                      hintText: 'Nombre de usuario',
+                      labelText: 'Nombre de usuario',
                       suffixIcon: const  Icon(
                         Icons.verified_user
                       ),
@@ -72,8 +72,8 @@ class _crearCuentaState extends State<crearCuenta> {
                     enableInteractiveSelection: false,
                     textCapitalization: TextCapitalization.none,
                     decoration: InputDecoration(
-                      hintText: 'Direccion',
-                      labelText: 'Direccion',
+                      hintText: 'Dirección',
+                      labelText: 'Dirección',
                       suffixIcon: const  Icon(
                         Icons.verified_user
                       ),
@@ -97,8 +97,8 @@ class _crearCuentaState extends State<crearCuenta> {
                       FilteringTextInputFormatter.digitsOnly
                     ],
                     decoration: InputDecoration(
-                      hintText: 'Telefono',
-                      labelText: 'Telefono',
+                      hintText: 'Teléfono',
+                      labelText: 'Teléfono',
                       suffixIcon: const  Icon(
                         Icons.verified_user
                       ),
@@ -118,8 +118,8 @@ class _crearCuentaState extends State<crearCuenta> {
                     enableInteractiveSelection: false,
                     textCapitalization: TextCapitalization.none,
                     decoration: InputDecoration(
-                      hintText: 'Coreeo Electronico',
-                      labelText: 'Correo Electronico',
+                      hintText: 'Correo Electrónico',
+                      labelText: 'Correo Electrónico',
                       suffixIcon: const  Icon(
                         Icons.verified_user
                       ),
@@ -139,8 +139,8 @@ class _crearCuentaState extends State<crearCuenta> {
                     enableInteractiveSelection: false,
                     textCapitalization: TextCapitalization.none,
                     decoration: InputDecoration(
-                      hintText: 'Contrasena',
-                      labelText: 'Contrasena',
+                      hintText: 'Contraseña',
+                      labelText: 'Contraseña',
                       suffixIcon: const  Icon(
                         Icons.verified_user
                       ),
@@ -190,7 +190,7 @@ class _crearCuentaState extends State<crearCuenta> {
     print(jsonEncode(requestBody));
 
     if (response.statusCode == 200) {
-      _showAlertDialog(context,'Cuenta Creada exitosamente');
+      _showAlertDialog(context,'Cuenta creada exitosamente');
 
       print('Respuesta de la API: ${response.body}');
     } else {

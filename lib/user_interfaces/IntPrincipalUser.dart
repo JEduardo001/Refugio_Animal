@@ -150,7 +150,7 @@ class _IntPrincipalUserState extends State<IntPrincipalUser> {
                     padding: const EdgeInsets.all(5.0),
                     decoration: BoxDecoration(
                      color: btnsMenuFiltros['VerTodos']['color'],
-                     borderRadius: BorderRadius.circular(10.0), // Ajusta el radio según tus necesidades
+                     borderRadius: BorderRadius.circular(10.0), 
                     ),
                     child: const Text(
                       'Ver Todos',
@@ -207,9 +207,11 @@ class _IntPrincipalUserState extends State<IntPrincipalUser> {
                             : const Text(''),
                           
                           for (var i in datos)
-                            setPubliaciones(i)
-                           
-
+                            i['adoptado']==false
+                              ? setPubliaciones(i)
+                              : const Text('')
+                            
+            
                         ],
                         
                       );
@@ -277,6 +279,7 @@ class _IntPrincipalUserState extends State<IntPrincipalUser> {
             id: '${datos['id']}',
             tipoMascota: '${datos['especie']}',
             ubicacion: '${datos['ubicacion']}',
+
 
           );
           break;

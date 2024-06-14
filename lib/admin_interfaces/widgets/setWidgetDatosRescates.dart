@@ -50,7 +50,6 @@ class setWidgetDatosRescates extends StatelessWidget {
 
 
   });
-  List<String> lista = ['Hola1', 'Hola2', 'Hola3'];
 
 
   @override
@@ -75,118 +74,40 @@ class setWidgetDatosRescates extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 242, 212, 251),  
-                  borderRadius: BorderRadius.circular(20),  
-                ),
-                child:  Text('ID: $idMascota', style: const TextStyle(fontSize: 16),)
-              ), 
+              Text('ID: $idMascota', style: const TextStyle(fontSize: 16),), 
               const SizedBox(height: 20),
 
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 242, 212, 251),  
-                  borderRadius: BorderRadius.circular(20),  
-                ),
-                child:  Text('Nombre: $nombreMascota', style: const TextStyle(fontSize: 16),)
-              ),      
+              Text('Nombre: $nombreMascota', style: const TextStyle(fontSize: 16),),      
               const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 242, 212, 251),  
-                  borderRadius: BorderRadius.circular(20),  
-                ),
-                child: Text('Edad: $edadMascota', style: const TextStyle(fontSize: 16),)
-              ),
+              Text('Edad: $edadMascota', style: const TextStyle(fontSize: 16),),
+              const SizedBox(height: 20),
+              Text('Raza: $razaMascota',style: const TextStyle(fontSize: 16),),
+              const SizedBox(height: 20),
+            Text('Especie: $especie',style: const TextStyle(fontSize: 16),),
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 241, 214, 255),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:   Text('Raza: $razaMascota',style: const TextStyle(fontSize: 16),)
-            ),
+            Text('Ubicación: $ubicacionMascota',style: const TextStyle(fontSize: 16),),
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 241, 214, 255),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:   Text('Especie: $especie',style: const TextStyle(fontSize: 16),)
-            ),
+            Text('Signos de Maltrato: $signosMaltrato',style: const TextStyle(fontSize: 16),),
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 241, 214, 255),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:   Text('Ubicacion: $ubicacionMascota',style: const TextStyle(fontSize: 16),)
-            ),
+            Text('Vacuna Leptospirosis : $vacunaLeptospirosis',style: const TextStyle(fontSize: 16),),
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 241, 214, 255),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:   Text('Signos de Maltrato: $signosMaltrato',style: const TextStyle(fontSize: 16),)
-            ),
-            const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 241, 214, 255),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:   Text('Vacuna Leptospirosis : $vacunaLeptospirosis',style: const TextStyle(fontSize: 16),)
-            ),
-             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 241, 214, 255),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:   Text('Vacuna Rabia : $vacunaRabia',style: const TextStyle(fontSize: 16),)
-            ),
+            Text('Vacuna Rabia : $vacunaRabia',style: const TextStyle(fontSize: 16),),
             const SizedBox(height: 20),
             const Text('Datos Tutor: ',style:  TextStyle(fontSize: 26),),
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 242, 212, 251),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:  Text('Nombre Tutor: $nombreTutor', style: const TextStyle(fontSize: 16),)
-            ), 
+            Text('Nombre tutor: $nombreTutor', style: const TextStyle(fontSize: 16),), 
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 242, 212, 251),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:  Text('Telefono: $telefono', style: const TextStyle(fontSize: 16),)
-            ), 
+            Text('Teléfono: $telefono', style: const TextStyle(fontSize: 16),), 
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 242, 212, 251),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:  Text('Direccion: $direccion', style: const TextStyle(fontSize: 16),)
-            ), 
+            Text('Dirección: $direccion', style: const TextStyle(fontSize: 16),), 
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 242, 212, 251),  
-                borderRadius: BorderRadius.circular(20),  
-              ),
-              child:  Text('Correo Electronico: $correoElectronico', style: const TextStyle(fontSize: 16),)
-            ), 
+            Text('Correo Electrónico: $correoElectronico', style: const TextStyle(fontSize: 16),), 
             const SizedBox(height: 20),
 
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  _showAlertDialog(context, 'Si confirmas el rescate, Se eliminará la mascota y el reporte concluyendo con su estadia');
+                  _showAlertDialog(context, 'Si confirmas el rescate, Se eliminará la mascota y el reporte concluyendo con su estadía');
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: const Color.fromARGB(255, 0, 0, 0), backgroundColor:const Color.fromARGB(255, 91, 255, 179), shape: RoundedRectangleBorder(
@@ -224,7 +145,7 @@ class setWidgetDatosRescates extends StatelessWidget {
       print(jsonEncode(requestBody));
 
       if (response.statusCode == 200) {
-        _showAlertDialog2(context,'RESCATE CONFIRMADO!! Solo queda esperar a que el nuevo tutor pase por $nombreMascota');
+        _showAlertDialog2(context,'RESCATE CONFIRMADO. Solo queda esperar a que el nuevo tutor pase por $nombreMascota');
 
         print('Respuesta de la API: ${response.body}');
       } else {
