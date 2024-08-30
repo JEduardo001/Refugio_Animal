@@ -36,7 +36,7 @@ class _loginState extends State<login> {
                   MaterialPageRoute(builder: (context) => const crearCuenta()),
                 );
               },
-              child: const Text('Crear Cuenta', style: TextStyle(color: Color.fromARGB(255, 75, 150, 255)),),
+              child: const Text('Crear Cuttttttttttttenta', style: TextStyle(color: Color.fromARGB(255, 75, 150, 255)),),
           ),
           ],
         ),
